@@ -1,0 +1,26 @@
+{
+  "name": "forge",
+  "dockerComposeFile": "./docker-compose.yml",
+  "service": "forge",
+  "workspaceFolder": "/home/foundry/app",
+  "forwardPorts": [],
+  "customizations": {
+    // Configure properties specific to VS Code.
+    "vscode": {
+      // Add the IDs of extensions you want installed when the container is created.
+      "extensions": [
+        "streetsidesoftware.code-spell-checker",
+        "oderwat.indent-rainbow",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss",
+        "pranaygp.vscode-css-peek",
+        "formulahendry.auto-rename-tag",
+        "dbaeumer.vscode-eslint",
+        "vscode-icons-team.vscode-icons",
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "JuanBlanco.solidity"
+      ]
+    }
+  }
+}

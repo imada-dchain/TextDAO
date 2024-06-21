@@ -1,0 +1,13 @@
+# Use the latest foundry image
+FROM ghcr.io/foundry-rs/foundry
+
+ENV ANVIL_IP_ADDR=0.0.0.0
+
+# Copy our source code into the container
+USER foundry
+RUN mkdir -p /home/foundry/app
+WORKDIR /home/foundry/app
+COPY --chown=foundry:foundry ./ ./
+
+# Set the entrypoint to the forge deployment command
+ENTRYPOINT ["anvil", "--fork-url", "https://eth-sepolia.g.alchemy.com/v2/ogLygUwH0kFnucqEHVd1BHRN9Bnwk2LA"]

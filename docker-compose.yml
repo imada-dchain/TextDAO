@@ -1,0 +1,24 @@
+services:
+  anvil:
+    build:
+      context: .
+      dockerfile: Dockerfile.anvil
+    tty: true
+    ports:
+      - 8545:8545
+    networks:
+      - anvil
+  forge:
+    build:
+      context: .
+      dockerfile: Dockerfile.forge
+    tty: true
+    volumes:
+      - ./:/home/foundry/app
+    command: tail -f /dev/null
+    networks:
+      - anvil
+
+networks:
+  anvil:
+    external: true
